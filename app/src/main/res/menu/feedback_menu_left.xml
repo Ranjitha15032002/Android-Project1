@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profile" />
+    <item
+        android:id="@+id/nav_timetable"
+        android:title="Timetable" />
+    <item
+        android:id="@+id/nav_coursedetails"
+        android:title="Course Details" />
+    <item
+        android:id="@+id/nav_attendance"
+        android:title="Attendance" />
+    <item
+        android:id="@+id/nav_faculty"
+        android:title="Faculty Details" />
+    <item
+        android:id="@+id/nav_scorecard"
+        android:title="Scorecard" />
+    <item
+        android:id="@+id/nav_announcements"
+        android:title="Announcements" />
+
+</menu>

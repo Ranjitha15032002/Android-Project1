@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.acadMate.MainActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Toolbar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#D97769"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/open_right_drawer_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:src="@mipmap/user_profile_foreground" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- Header section -->
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tool_bar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/backBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/aero_foreground" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="-60dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Attendance"
+                            android:textSize="25dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Semester Selection section -->
+            <LinearLayout
+                android:id="@+id/spin"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+
+                <!-- Select Semester Text -->
+                <TextView
+                    android:id="@+id/label_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-70dp"
+                    android:text="@string/select_semester"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <!-- Spinner -->
+                <Spinner
+                    android:id="@+id/spinner_semesters"
+                    android:layout_width="334dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="15dp" />
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-22dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spin">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:stretchColumns="1">
+
+                    <!-- Table Row Headers -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="Code"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/subject"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="Subject"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/totclsss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="Total Classes"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/classpresent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="Classes Present"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/classabsent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="Classes Absent"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/peratt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="Attendance (%)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <!-- Example attendance data rows -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code1"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/sub1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totclass1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssp1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssab1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/per1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+                    </TableRow>
+
+                    <!-- Add 9 more rows here, similarly formatted -->
+                    <!-- Row 2 -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/sub2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totclass2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssp2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/per2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/sub3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totclass3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssp3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssab3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/per3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/sub4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totclass4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssp4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssab4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/per4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/code5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/sub5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/totclass5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssp5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/clssab5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/per5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:text="" />
+                    </TableRow>
+
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="490dp"
+                android:orientation="vertical"
+                android:background="#D3D3D3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+
+                <TextView
+                    android:id="@+id/disclaimer_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Disclaimer"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:id="@+id/disclaimer_content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="left"
+                    android:text="The attendance data may be updated periodically and may not reflect real-time records. Students are responsible for regularly checking their attendance and reporting discrepancies to the concerned department. The portal is not liable for any issues arising from delayed or incorrect entries."
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view_left"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/attendance_menu_left" />
+
+        <!-- Right Navigation View -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view_right"
+            android:layout_width="200dp"
+            android:layout_height="130dp"
+            android:layout_gravity="end"
+            app:menu="@menu/attendance_menu_right" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

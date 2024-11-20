@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:layout_margin="24dp"
+    android:layout_gravity="center"
+    android:background="@drawable/card_background"
+    android:elevation="10dp">
+
+    <ImageView
+        android:id="@+id/close_dialog"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="1dp"
+        android:contentDescription="Close"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <!-- Title of the Announcement -->
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Announcement Title"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@android:color/black" />
+
+    <!-- Content of the Announcement -->
+    <TextView
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Content goes here"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@android:color/black" />
+
+    <!-- Close Button (X) -->
+
+
+</LinearLayout>

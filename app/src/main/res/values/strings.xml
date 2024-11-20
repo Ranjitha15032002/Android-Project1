@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">AcadMate</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+<!--    Profile Details Strings-->
+    <string name="profile_title">Profile</string>
+    <string name="user_name">Name</string>
+    <string name="user_regno">Registration Number</string>
+    <string name="user_dob">Date of Birth</string>
+    <string name="user_phone">Phone</string>
+    <string name="user_email">Email</string>
+    <string name="user_learner">Learner ID</string>
+    <string name="user_nationality">Nationality</string>
+
+
+
+<!--    Timetable Strings-->
+    <string name="tt_title">Time Table</string>
+    <string name="select_semester">Select Semester</string>
+    <string-array name="year_sem">
+        <item>First Sem</item>
+        <item>Second Sem</item>
+        <item>Third Sem</item>
+    </string-array>
+
+<!--    Course Details Strings-->
+    <string name="course_title">Course Details</string>
+
+<!--    Notification Strings-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+<!--    Scorecard Strings-->
+    <string-array name="semester_options">
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+    </string-array>
+
+<!--    Attendance Strings-->
+    <string-array name="year_semester_array">
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+
+    </string-array>
+
+<!--    Feedback Strings-->
+    <string-array name="course_list">
+        <item>Course 1</item>
+        <item>Course 2</item>
+        <item>Course 3</item>
+        <!-- Add more courses as needed -->
+    </string-array>
+</resources>
+

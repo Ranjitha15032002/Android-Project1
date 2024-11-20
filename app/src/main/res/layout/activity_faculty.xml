@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Main content (Top Bar and other layouts) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5">
+
+        <!-- First DrawerLayout content (Top Bar) -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#D97769"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Profile Image in Top Bar -->
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="end"
+                android:id="@+id/profile"
+                android:layout_marginStart="350dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/user_profile_foreground"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Second Linear Layout aligned below the first -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/tool_bar"
+            android:id="@+id/l2"
+            android:layout_marginTop="0dp"
+            android:background="#F5F5F5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <!-- Profile Image in Second Layout -->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/bk1"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/aero_foreground" />
+
+            <!-- TextView for Course Feedback -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Faculty Details"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/l3"
+            android:layout_below="@+id/l2">
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/list_faculty"
+                android:divider="@color/transparent"
+                android:dividerHeight="10.0sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Left Navigation View (Optional if needed) -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_left"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/faculty_menu_left"
+        android:background="@color/white"
+        app:itemTextColor="@color/black"
+        />
+
+    <!-- Right Navigation View -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_right"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:layout_gravity="end"
+        app:menu="@menu/faculty_menu_right"
+        android:background="@color/white"
+        app:itemTextColor="@color/black" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

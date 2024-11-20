@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/attendance"
+        android:title="Attendence"/>
+    <item
+        android:id="@+id/announcement"
+        android:title="Announcements"/>
+    <item
+        android:id="@+id/scorecard"
+        android:title="Score Card"/>
+    <item
+        android:id="@+id/timetable"
+        android:title="TIme table"/>
+    <item
+        android:id="@+id/coursedetails"
+        android:title="Course Details"/>
+    <item
+        android:id="@+id/feedback"
+        android:title="FeedBack"/>
+
+
+</menu>

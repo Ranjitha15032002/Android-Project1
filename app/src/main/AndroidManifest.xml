@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/new_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/new_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Profile_page"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.acadMate.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.acadMate.timetable" />
+        <activity android:name="com.example.acadMate.coursedetails" />
+        <activity android:name="com.example.acadMate.profile" />
+        <activity android:name="com.example.acadMate.dashboard" />
+        <activity android:name="com.example.acadMate.notification" />
+        <activity android:name="com.example.acadMate.faculty" />
+        <activity android:name="com.example.acadMate.scorecard" />
+        <activity android:name="com.example.acadMate.attendance" />
+        <activity android:name="com.example.acadMate.feedback" />
+
+    </application>
+
+</manifest>
